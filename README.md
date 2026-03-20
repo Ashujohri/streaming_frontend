@@ -34,3 +34,45 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+# Streaming Frontend
+
+- npm create-next-app@latest
+- Configured Tailwind
+- Header
+- Login Form
+- Sign Up Form
+- Form Validation
+- UseRef
+- Setup Firebase
+    - Configure Firebase
+- Create Signup user account in firebase
+- Implement Sign-up And Sign-In API
+- Create Redux Store with AuthSlice
+- Implemented Sign-out feature
+- Update Profile API
+- Fetch Movies list from TMDB Movies
+- Registered TMDB API & create an app & get access token
+- Fix - If user log-in then it should not be login page
+- Get Data from TMDB now playing movies list API
+- Custom Hooks for Now playing & Movie Trailer
+- Create Movie Silce 
+- Update Store with Movie Slice 
+- Planning & implemented of MainContainer, Secondary Component & VideoBackground Components etc.
+- 
+
+# Feature
+- Login/SignUp
+    - Sign In / Sign Up form
+    - redirect to Browse Page
+- Browser (Authentication)
+    - Header
+    - Main Movie
+        - Trailer in Background
+        - Title & Description
+        - Movie Suggestion
+            - Movie List
+- Netflix GPT
+    - Search bar
+    - Movie Suggestion

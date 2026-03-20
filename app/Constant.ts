@@ -22,3 +22,7 @@ export const API_OPTION = {
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMmMxYzdiY2YxNDZlMDcyNjM3ZmIxNDRmMWM2ZmIzNSIsIm5iZiI6MTY5NjMzNjgwNC4zMjYwMDAyLCJzdWIiOiI2NTFjMGJhNDIyM2E4YjAxMjA2ZDFhYjUiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.8RmzRwYEsiew8UVesd8AftFm-wjzq2_AFy8zCQAj988",
   },
 };
+
+export const TMDB_ICONS = {
+  TMDB: "https://image.tmdb.org/t/p/w500",
+}

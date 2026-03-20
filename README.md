@@ -60,6 +60,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - Create Movie Silce 
 - Update Store with Movie Slice 
 - Planning & implemented of MainContainer, Secondary Component & VideoBackground Components etc.
+- Build Secondary Component
 - 
 
 # Feature

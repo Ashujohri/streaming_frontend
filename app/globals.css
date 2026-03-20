@@ -1,4 +1,62 @@
 @import "tailwindcss";
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+html body {
+  overflow-x: hidden;
+  background: black;
+}
+
+body {
+  position: relative;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+
+.netflix-play {
+  background: white;
+  color: black;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.netflix-play:hover {
+  background: #e5e5e5;
+}
+
+.netflix-circle {
+  background: rgba(42, 42, 42, 0.8);
+  color: white;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.netflix-circle:hover {
+  border-color: white;
+}
 
 /* :root {
   --background: #ffffff;

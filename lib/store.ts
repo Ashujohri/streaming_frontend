@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "@/app/features/auth/authSlice";
 import movieReducer from "@/app/features/movie/movieSlice";
 import trailerReducer from "@/app/features/trailer/trailerSlice";
+import telivisionReducer from "@/app/features/television/tvSlice";
 
 export const makeStore = () => {
   return configureStore({
@@ -9,6 +10,7 @@ export const makeStore = () => {
       auth: authReducer,
       movie: movieReducer,
       trailer: trailerReducer,
+      television: telivisionReducer,
     },
   });
 };

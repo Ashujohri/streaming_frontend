@@ -3,25 +3,25 @@ import { useEffect, useState } from "react";
 
 const trailerCache = new Map<number, string>();
 
-export default function useHoverMovieTrailer(
-  movieId: number,
+export default function useHoverTvShowTrailer(
+  tvShowId: number,
   enabled: boolean
 ) {
   const [trailerKey, setTrailerKey] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!enabled || !movieId) return;
+    if (!enabled || !tvShowId) return;
 
     // Cache Trailer Condition
-    if (trailerCache.has(movieId)) {
-      setTrailerKey(trailerCache.get(movieId)!);
+    if (trailerCache.has(tvShowId)) {
+      setTrailerKey(trailerCache.get(tvShowId)!);
       return;
     }
 
     const fetchTrailer = async () => {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/movie/${movieId}/videos`,
+          `https://api.themoviedb.org/3/tv/${tvShowId}/videos`,
           API_OPTION
         );
         const data = await response.json();
@@ -34,7 +34,7 @@ export default function useHoverMovieTrailer(
         const key = trailer?.key ?? null;
 
         // Caching store
-        if (key) trailerCache.set(movieId, key);
+        if (key) trailerCache.set(tvShowId, key);
 
         setTrailerKey(key);
       } catch (e) {
@@ -43,7 +43,7 @@ export default function useHoverMovieTrailer(
     };
 
     fetchTrailer();
-  }, [movieId, enabled]);
+  }, [tvShowId, enabled]);
 
   return trailerKey;
 }

@@ -1,20 +1,20 @@
-import useHoverMovieTrailer from "../hooks/useHoverMovieTrailer";
 import CircleBtn from "@/app/components/Button";
 import { TMDB_ICONS } from "@/app/Constant";
-import { useHoverContext } from "../context/HoverContext";
-import useHoverIntent from "../hooks/useHoverIntent";
+import { useHoverContext } from "@/app/browser/SecondaryContainer/context/HoverContext";
+import useHoverIntent from "@/app/browser/SecondaryContainer/hooks/useHoverIntent";
+import useHoverTvShowTrailer from "../hooks/useHoverTvShowTrailer";
 
-export default function MovieCard({ posterPath, backdropPath, movieId }: any) {
+export default function TvShowCard({ posterPath, backdropPath, tvShowId }: any) {
   const { activeId, setActiveId } = useHoverContext();
   const { hovered, onEnter, onLeave } = useHoverIntent(300);
 
-  const isActive = activeId === movieId;
+  const isActive = activeId === tvShowId;
 
-  const trailerKey = useHoverMovieTrailer(movieId, isActive);
+  const trailerKey = useHoverTvShowTrailer(tvShowId, isActive);
 
   const handleEnter = () => {
     onEnter();
-    setActiveId(movieId);
+    setActiveId(tvShowId);
   };
 
   const handleLeave = () => {
@@ -29,7 +29,7 @@ export default function MovieCard({ posterPath, backdropPath, movieId }: any) {
       className="relative w-[200px] flex-shrink-0"
     >
       {/* POSTER */}
-      <img src={TMDB_ICONS.TMDB + posterPath} className="rounded-md" />
+      <img src={TMDB_ICONS?.TMDB + posterPath} className="rounded-md" />
 
       {hovered && isActive && (
         <div className="absolute top-0 left-0 w-[320px] z-[999]">
@@ -42,7 +42,7 @@ export default function MovieCard({ posterPath, backdropPath, movieId }: any) {
                 allow="autoplay"
               />
             ) : (
-              <img src={TMDB_ICONS.TMDB + backdropPath} />
+              <img src={TMDB_ICONS?.TMDB + backdropPath} />
             )}
 
             <div className="flex gap-3 p-3">

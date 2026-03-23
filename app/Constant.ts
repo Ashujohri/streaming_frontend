@@ -6,6 +6,13 @@ export const HEADER = {
     "https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2026-02-12/consent/87b6a5c0-0104-4e96-a291-092c11350111/019ae4b5-d8fb-7693-90ba-7a61d24a8837/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png",
   USER_ICON:
     "https://occ-0-6247-2164.1.nflxso.net/dnm/api/v6/SO2HoVCx33X8phZh2pZZmQ4QgNY/AAAABS8sWFjSyj1zyfgcnGamqyJ1E2ZubZGo8dndCM_ipf_5UpmVlkuf8IXzQlmPZQqTMWNjWukESRdLkFGHnf7zbY3MJCO3r4s.png?r=229",
+  NAV_LINKS: [
+    { label: "Home", path: "/browser" },
+    { label: "TV Shows", path: "/browser/television" },
+    { label: "Movies", path: "" },
+    { label: "New & Popular", path: "" },
+    { label: "My List", path: "" },
+  ],
 };
 
 export const PAGES = {
@@ -25,4 +32,10 @@ export const API_OPTION = {
 
 export const TMDB_ICONS = {
   TMDB: "https://image.tmdb.org/t/p/w500",
-}
+  TMDB_TV: "https://api.themoviedb.org/3/tv/",
+};
+
+export const MEDIA_TYPE = {
+  MOVIE: "movie",
+  TELEVISION: "tv",
+};

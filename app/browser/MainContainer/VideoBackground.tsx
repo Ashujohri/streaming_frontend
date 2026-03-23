@@ -1,10 +1,10 @@
 "use client";
 
 import { useAppSelector } from "@/lib/hooks";
-import { useMovieTrailer } from "../hooks/useMovieTrailer";
+import { MediaType, useMediaTrailer } from "../hooks/useMediaTrailer";
 
-export default function VideoBackground({ movieId }: { movieId: number }) {
-  useMovieTrailer(movieId);
+export default function VideoBackground({ movieId, type }: { movieId: number, type: MediaType }) {
+  useMediaTrailer(movieId, type);
 
   const trailerKey = useAppSelector((store) => store?.trailer?.trailerVideo);
 

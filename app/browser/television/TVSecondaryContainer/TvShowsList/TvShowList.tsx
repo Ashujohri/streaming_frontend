@@ -1,16 +1,17 @@
 "use client";
-import useMovieList from "../hooks/useMovieList";
-import MovieCard from "./MovieCard";
+
+import useTvShowList from "../hooks/useTvShowList";
+import TvShowCard from "./TvShowCard";
 
 interface MovieListProps {
   title: string;
-  movies: any[];
+  tvShow: any[];
 }
 
-export default function MovieList({ title, movies }: MovieListProps) {
-  const { rowRef, scroll, canScrollLeft, canScrollRight } = useMovieList();
+export default function TvShowList({ title, tvShow }: MovieListProps) {
+  const { rowRef, scroll, canScrollLeft, canScrollRight } = useTvShowList();
 
-  if (!movies) return null;
+  if (!tvShow) return null;
 
   return (
     <div className="px-6 relative overflow-visible">
@@ -44,12 +45,12 @@ export default function MovieList({ title, movies }: MovieListProps) {
           scrollbar-hide 
           relative"
       >
-        {movies.map((movie: any) => (
-          <MovieCard
-            key={movie.id}
-            posterPath={movie?.poster_path}
-            backdropPath={movie?.backdrop_path}
-            movieId={movie?.id}
+        {tvShow.map((tv: any) => (
+          <TvShowCard
+            key={tv.id}
+            posterPath={tv?.poster_path}
+            backdropPath={tv?.backdrop_path}
+            tvShowId={tv?.id}
           />
         ))}
       </div>

@@ -1,30 +1,63 @@
 @import "tailwindcss";
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+@reference "tailwindcss";
+
+/* Theme Tokens (Netflix Style)  */
+
+
+html {
+  --bg: 255 255 255;
+  --text: 0 0 0;
 }
-html body {
+
+html.dark {
+  --bg: 10 10 10;
+  --text: 255 255 255;
+}
+
+/* Base Reset                    */
+html {
   overflow-x: hidden;
-  background: black;
+  scroll-behavior: smooth;
 }
 
 body {
-  position: relative;
+  font-family: var(--font-primary);
+  overflow-x: hidden;
+  background-color: rgb(var(--bg));
+  color: rgb(var(--text));
+  transition: background-color 0.25s ease, color 0.25s ease;
+  /* color: var(--color-text); */
+  /* background: var(--bg); */
+  /* color: var(--text); */
+  /* transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease; */
 }
+
+/* Scrollbar Hide Utility        */
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
 .scrollbar-hide {
   scrollbar-width: none;
 }
 
+/* Typography System             */
+
+.title-xl {
+  @apply text-5xl font-bold tracking-tight;
+}
+
+.title-lg {
+  @apply text-2xl font-semibold;
+}
+
+.body-text {
+  @apply text-sm;
+  color: var(--color-muted);
+}
+
+/* Netflix Button Styles         */
 .netflix-play {
   background: white;
   color: black;
@@ -32,53 +65,93 @@ body {
   height: 38px;
   border-radius: 999px;
   font-weight: bold;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.2s;
+
+  transition: all 0.2s ease;
 }
 
 .netflix-play:hover {
   background: #e5e5e5;
+  transform: scale(1.05);
 }
 
 .netflix-circle {
   background: rgba(42, 42, 42, 0.8);
   color: white;
+
   width: 38px;
   height: 38px;
   border-radius: 999px;
+
   border: 2px solid rgba(255, 255, 255, 0.4);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition: all 0.2s ease;
 }
 
 .netflix-circle:hover {
   border-color: white;
+  transform: scale(1.05);
 }
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ============================= */
+/* Animations                    */
+/* ============================= */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
+.fade-in {
+  animation: fadeIn 0.25s ease forwards;
+}
+
+/* ============================= */
+/* Netflix Card Hover Foundation */
+/* ============================= */
+
+.netflix-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.netflix-card:hover {
+  transform: scale(1.08);
+  box-shadow: var(--shadow-netflix);
+  z-index: 20;
+}
+
+/* ============================= */
+/* Image Performance Helpers     */
+/* ============================= */
+
+.image-fade {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.image-fade.loaded {
+  opacity: 1;
+}
+
+/* ============================= */
+/* Selection Styling             */
+/* ============================= */
+
+::selection {
+  background: var(--color-accent);
+  color: white;
+}

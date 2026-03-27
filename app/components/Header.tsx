@@ -8,7 +8,8 @@ import { useRouter } from "next/navigation";
 import { HEADER, PAGES } from "../Constant";
 import ProfileMenu from "./ProfileMenu";
 import { useEffect, useRef, useState } from "react";
-import { Bell, Search } from "lucide-react";
+import { Bell, Moon, Search, Sun } from "lucide-react";
+import { useTheme } from "../context/ThemeContext";
 
 export default function Header() {
   const dispatch = useAppDispatch();
@@ -17,6 +18,7 @@ export default function Header() {
   const [showBg, setShowBg] = useState(false);
   const [open, setOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const { theme, toggleTheme } = useTheme();
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -75,6 +77,12 @@ export default function Header() {
           <div className="flex items-center gap-6 text-white">
             <Search className="cursor-pointer hover:scale-110 hover:text-gray-300 transition duration-200" />
             <Bell className="cursor-pointer hover:scale-110 hover:text-gray-300 transition duration-200" />
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition"
+            >
+              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
             <div
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}

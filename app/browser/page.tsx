@@ -14,12 +14,10 @@ export default function Browser() {
   useUpcomingMovies();
 
   return (
-    <div>
-      <div className="">
-        <Header />
-        <MainContainer />
-        <SecondaryConatiner />
-      </div>
+    <div className="">
+      <Header />
+      <MainContainer />
+      <SecondaryConatiner />
     </div>
   );
 }

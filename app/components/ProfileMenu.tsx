@@ -18,7 +18,10 @@ export default function ProfileMenu({
 
       {open && (
         <div className="absolute right-0 top-full mt-2 bg-black/90 px-6 py-3 rounded-md whitespace-nowrap text-white shadow-2xl animate-[fadeIn_.2s_ease]">
-          <button className="hover:underline" onClick={onSignOut}>
+          <button
+            className="hover:underline"
+            onClick={onSignOut}
+          >
             Sign Out
           </button>
         </div>

@@ -46,7 +46,12 @@ export default function AuthProvider({
     return () => unsubscribe();
   }, [pathName, router, dispatch]);
 
-  if (loading) return null;
+  if (loading)
+    return (
+      <div className="h-screen flex items-center justify-center bg-white dark:bg-black">
+        <p className="text-gray-700 dark:text-gray-300">Loading...</p>
+      </div>
+    );
 
   return <>{children}</>;
 }

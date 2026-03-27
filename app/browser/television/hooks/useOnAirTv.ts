@@ -2,25 +2,25 @@
 import { useEffect } from "react";
 import { useAppDispatch } from "@/lib/hooks";
 import { API_OPTION } from "@/app/Constant";
-import { addTopRatedTvShows } from "@/app/features/television/tvSlice";
+import { addOnAirTvShows } from "@/app/features/television/tvSlice";
 
-export const useTopRatedTvShows = () => {
+export const useOnAirTvShows = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    getTopRatedTvShows();
+    getOnAirTvShows();
   }, []);
 
-  const getTopRatedTvShows = async () => {
+  const getOnAirTvShows = async () => {
     try {
       const response = await fetch(
-        "https://api.themoviedb.org/3/tv/top_rated",
+        "https://api.themoviedb.org/3/tv/on_the_air",
         API_OPTION
       );
       const data = await response.json();
-      dispatch(addTopRatedTvShows(data?.results));
+      dispatch(addOnAirTvShows(data?.results));
     } catch (error) {
-      console.error("Top Rated Tv Shows API Error: ", error);
+      console.error("On Air Tv Shows API Error: ", error);
     }
   };
 };

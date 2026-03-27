@@ -50,16 +50,34 @@ interface TopRatedTelevision {
   vote_count: number;
 }
 
+interface OnAirTelevision {
+  backdrop_path: string;
+  first_air_date: string;
+  genre_ids: number[];
+  id: number;
+  name: string;
+  origin_country: string[];
+  original_language: string;
+  original_name: string;
+  overview: string;
+  popularity: number;
+  poster_path: string;
+  vote_average: number;
+  vote_count: number;
+}
+
 interface TeleVisionState {
   trendingTelevision: TrendingTeleVision[];
   popularTelevision: PopularTelevision[];
   topRatedTelevision: TopRatedTelevision[];
+  onAirTelevision: OnAirTelevision[];
 }
 
 const initialState: TeleVisionState = {
   trendingTelevision: [],
   popularTelevision: [],
   topRatedTelevision: [],
+  onAirTelevision:[],
 };
 
 const TeleVisionSlice = createSlice({
@@ -84,8 +102,14 @@ const TeleVisionSlice = createSlice({
     ) => {
       state.topRatedTelevision = action.payload;
     },
+    addOnAirTvShows: (
+      state,
+      action: PayloadAction<TrendingTeleVision[]>
+    ) => {
+      state.onAirTelevision = action.payload;
+    },
   },
 });
 
-export const { addTrendingTvShows, addPopularTvShows, addTopRatedTvShows } = TeleVisionSlice.actions;
+export const { addTrendingTvShows, addPopularTvShows, addTopRatedTvShows, addOnAirTvShows } = TeleVisionSlice.actions;
 export default TeleVisionSlice.reducer;

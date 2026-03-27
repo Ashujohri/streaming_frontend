@@ -77,12 +77,12 @@ export default function Header() {
           <div className="flex items-center gap-6 text-white">
             <Search className="cursor-pointer hover:scale-110 hover:text-gray-300 transition duration-200" />
             <Bell className="cursor-pointer hover:scale-110 hover:text-gray-300 transition duration-200" />
-            <button
+            {/* <button
               onClick={toggleTheme}
               className="p-2 rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition"
             >
               {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
+            </button> */}
             <div
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}

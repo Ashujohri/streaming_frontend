@@ -9,7 +9,7 @@ export const HEADER = {
   NAV_LINKS: [
     { label: "Home", path: "/browser" },
     { label: "TV Shows", path: "/browser/television" },
-    { label: "Movies", path: "" },
+    { label: "Movies", path: "/browser/movies" },
     { label: "New & Popular", path: "" },
     { label: "My List", path: "" },
   ],
